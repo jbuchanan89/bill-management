@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" type="text/css" href= "/css/main.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+
+        h2 {
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Bill Pay Reminder</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <h2># of bills - <%= bills.length %></h2>
+    <h3><%=date%></h3>
+
+
+
+    <!--
+****************DISPLAYS BILL INFO********************** -->
+  <main>
+      <table class="table">
+        <thead>
+          <th>Due Date</th>
+          <th>Type</th>
+          <th>Recurring</th>
+          <th>Company</th>
+          <th>Minimum</th>
+          <th>Amount Paid</th>
+          <th>Paid</th>
+          <th>Del</th>
+
+        </thead>
+        <tbody>
+        <% for(var i=0; i<bills.length; i++) {%>
+          <tr>
+            <td><%=bills[i].dueDate%></td>
+            <td><%=bills[i].type%></td>
+
+            <% if(bills[i].recurring == true) { %>
+              <td>Yes</td>
+            <%} else{ %>
+              <td>No</td>
+            <%}%>
+            <td><%=bills[i].company%></td>
+            <% if(bills[i].paid == true){ %>
+              <td class= "green">$<%=bills[i].minimum%></td>
+              <td> <input class ="amount" type = "text"/></td>
+              <td><input type="checkbox" name="paid" checked class="paid-check" data-bill="<%=bills[i]._id%>"/></td>
+            <% } else { %>
+              <td class ='red'>$<%=bills[i].minimum%></td>
+              <td> <input class ="amount" type = "text"/></td>
+              <td><input type="checkbox" name="paid" class="paid-check" data-bill="<%=bills[i]._id%>"/></td>
+            <% } %>
+            <td><a href="/bill-delete/<%=bills[i]._id%>"><i class="fa fa-trash-o" style="font-size:24px"></i></td></a>
+          </tr>
+
+        <% } %>
+        <tr>
+          <td colspan="4" align="right">Total</td>
+          <td><strong>$<%=total%></strong></td>
+          <td colspan="1">Total Paid</td>
+          <td colspan="2">$<%=totalPaid%></td>
+        </tr>
+
+        </tbody>
+      </table>
+  </main>
+
+
+
+
+
+
+<!-- *********************ADD NEW BILLS****************************** -->
+  <div class= "new">
+    <h2> Add New Bill</h2>
+
+          <form method="post" action="/bill">
+              <p class = "info"><label>Due Date:</label> <input  class="info" type="date" name="dueDate"/>
+              <p class = "info"><label>Type: </label><input class="info" type="text" name="type"/></p>
+              <p class = "info"><label>Company:</label> <input class="info" type="text" name="company"/></p>
+              <p class = "info"><label>Minimum: </label><input class="info" type="text" name="minimum"/></p>
+              <p class = "info"><label>Recurring:</label> <input class="info" type = "checkbox" checked name="recurring" class= "recurring-check" value=true /></p>
+              <p class = "info"><input class="info-sub" type="submit" name="submit" value="Add Bill"/></p>
+          </form>
+
+  </div>
+
+
+
+
+
+<!-- ******************View Previous Months payments********* -->
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+  .green {
+    color: green;
+    font-weight: bold;
+  }
+
+  .red {
+    color: red;
+  }
+
+  *{
+    color: #4484CE;
+  }
+
+  main {
+    margin: 0 20px 80px 20px;
+  }
+
+  .info{
+    margin: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    width: 150px;
+    display: inline-block;
+  }
+
+  .amount {
+    width: 100px;
+  }
+
+.info-sub {
+  width: 80px;
+  display: inline;
+}
+
+ul li {
+  list-style: none;
+}
+
+.months {
+  border: 1px solid grey;
+  margin-top: 80px;
+  text-align: center;
+}
