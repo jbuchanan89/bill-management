@@ -1,14 +1,43 @@
-  .green {
+  *{
+    color: #88BBD6;
+    box-sizing: border-box;
+  }
+
+
+  body {
+    margin: 0;
+  }
+
+  .welcome {
+      color: #FA7C92;
+      font-size: 40px;
+  }
+
+  .minimum-true {
     color: green;
     font-weight: bold;
   }
 
-  .red {
+  th {
+    color: black;
+  }
+  .red{
     color: red;
   }
 
-  *{
-    color: #4484CE;
+  h2, h3, .route {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+  }
+  .remaining {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .minimum-false {
+    color: red;
   }
 
   main {
@@ -24,20 +53,20 @@
   }
 
   .amount {
-    width: 100px;
+    width: 50px;
   }
 
-.info-sub {
-  width: 80px;
-  display: inline;
-}
+  .info-sub {
+    width: 100px;
+    display: inline;
+  }
 
-ul li {
-  list-style: none;
-}
+  ul li {
+    list-style: none;
+  }
 
-.months {
-  border: 1px solid grey;
-  margin-top: 80px;
-  text-align: center;
-}
+  .months {
+    border: 1px solid grey;
+    margin-top: 80px;
+    text-align: center;
+  }

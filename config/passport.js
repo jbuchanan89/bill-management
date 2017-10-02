@@ -38,8 +38,11 @@ module.exports = function(passport) {
 
                 var newUser            = new User();
 
+                newUser.local.first= req.body.first;
+                newUser.local.last= req.body.last;
                 newUser.local.email    = email;
                 newUser.local.password = newUser.generateHash(password);
+
 
                 newUser.save(function(err) {
                     if (err)
@@ -59,6 +62,7 @@ module.exports = function(passport) {
  passport.use('local-login', new LocalStrategy({
         usernameField : 'email',
         passwordField : 'password',
+        // firstField: 'first';
         passReqToCallback : true
     },
     function(req, email, password, done) {

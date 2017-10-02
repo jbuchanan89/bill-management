@@ -5,25 +5,21 @@
     <link rel="stylesheet" type="text/css" href= "/css/main.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-
-    <style>
-        body        { padding-top:80px; word-wrap:break-word; }
-
-        h2 {
-          text-align: center;
-        }
-    </style>
 </head>
 <body>
 
     <div class="page-header text-center">
-        <h1><span class="fa fa-anchor"></span> Bill Pay Reminder</h1>
+      <p class = "welcome">Welcome <%=name%>!</p>
+        <h1><span class="glyphicon glyphicon-pencil"></span> Bill Pay Reminder</h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-    </div>
+  </div>
 
     <h2># of bills - <%= bills.length %></h2>
-    <h3><%=date%></h3>
 
+  <h3><%=start%> - <%=end%></h3>
+
+<p><a href="/all-bills"> View All Bills </a></p>
+<!-- <p><a href="/account-info">Update Account Info</a></p> -->
 
 
     <!--
@@ -35,7 +31,7 @@
           <th>Type</th>
           <th>Recurring</th>
           <th>Company</th>
-          <th>Minimum</th>
+          <th>Amount Due</th>
           <th>Amount Paid</th>
           <th>Paid</th>
           <th>Del</th>
@@ -53,13 +49,11 @@
               <td>No</td>
             <%}%>
             <td><%=bills[i].company%></td>
+            <td class="minimum minimum-<%=bills[i].paid%>">$<%=bills[i].minimum%></td>
+            <td> <input class="amount" type="text" data-bill="<%=bills[i]._id%>" value="<%=bills[i].amountPaid%>"/></td>
             <% if(bills[i].paid == true){ %>
-              <td class= "green">$<%=bills[i].minimum%></td>
-              <td> <input class ="amount" type = "text"/></td>
               <td><input type="checkbox" name="paid" checked class="paid-check" data-bill="<%=bills[i]._id%>"/></td>
             <% } else { %>
-              <td class ='red'>$<%=bills[i].minimum%></td>
-              <td> <input class ="amount" type = "text"/></td>
               <td><input type="checkbox" name="paid" class="paid-check" data-bill="<%=bills[i]._id%>"/></td>
             <% } %>
             <td><a href="/bill-delete/<%=bills[i]._id%>"><i class="fa fa-trash-o" style="font-size:24px"></i></td></a>
@@ -67,14 +61,20 @@
 
         <% } %>
         <tr>
-          <td colspan="4" align="right">Total</td>
-          <td><strong>$<%=total%></strong></td>
-          <td colspan="1">Total Paid</td>
-          <td colspan="2">$<%=totalPaid%></td>
+          <td colspan="4" align="right" >Total Due:</td>
+          <td colspan="4" class="due"><%=total%></td>
         </tr>
+
+        <tr>
+          <td colspan="4" align="right">Total Paid:</td>
+          <td class="totalPaid"><strong>$<%=totalPaid%></strong></td>
+        </tr>
+
 
         </tbody>
       </table>
+
+      <p class ='remaining'>Remaining Due by <%= end%> :</p> <p class ='remaining diff red'> $<%=difference%></p>
   </main>
 
 
@@ -90,13 +90,12 @@
               <p class = "info"><label>Due Date:</label> <input  class="info" type="date" name="dueDate"/>
               <p class = "info"><label>Type: </label><input class="info" type="text" name="type"/></p>
               <p class = "info"><label>Company:</label> <input class="info" type="text" name="company"/></p>
-              <p class = "info"><label>Minimum: </label><input class="info" type="text" name="minimum"/></p>
-              <p class = "info"><label>Recurring:</label> <input class="info" type = "checkbox" checked name="recurring" class= "recurring-check" value=true /></p>
+              <p class = "info"><label>Amount Due: </label><input class="info" type="text" name="minimum"/></p>
+              <p class = "info"><label>Recurring:</label> <input class="info" type = "checkbox" name="recurring" class= "recurring-check" value=true /></p>
               <p class = "info"><input class="info-sub" type="submit" name="submit" value="Add Bill"/></p>
           </form>
 
   </div>
-
 
 
 

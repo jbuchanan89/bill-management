@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+        <link rel="stylesheet" type="text/css" href= "/css/main.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+
+</head>
+<body>
+
+
+      <!--
+  ****************DISPLAYS BILL INFO********************** -->
+    <main>
+      <h1>All Bills</h1>
+      <p>Date: <%=date%></p>
+      <p>Name: <%=name%></p>
+      
+        <table class="table">
+          <thead>
+            <th>Due Date</th>
+            <th>Type</th>
+            <th>Recurring</th>
+            <th>Company</th>
+            <th>Amount</th>
+            <th>Del</th>
+
+          </thead>
+          <tbody>
+          <% for(var i=0; i<bills.length; i++) {%>
+
+            <tr>
+              <td><%=bills[i].dueDate%></td>
+              <td><%=bills[i].type%></td>
+
+              <% if(bills[i].recurring == true) { %>
+                <td>Yes</td>
+              <%} else{ %>
+                <td>No</td>
+              <%}%>
+              <td><%=bills[i].company%></td>
+              <td class="minimum minimum-<%=bills[i].paid%>">$<%=bills[i].minimum%></td>
+              <td><a href="/bill-delete/<%=bills[i]._id%>"><i class="fa fa-trash-o" style="font-size:24px"></i></td></a>
+            </tr>
+
+          <% } %>
+          </tbody>
+        </table>
+<p><a href= "/profile">< Go Back</a></p>
+
+    </main>
+
+
+  </div>
+  </body>
+  </html>

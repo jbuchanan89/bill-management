@@ -5,7 +5,7 @@
       type: String,
       company     : String,
       minimum  : Number,
-      amountPaid: Number,
+      amountPaid: {type: Number, default: 0},
       paid : Boolean,
       recurring: Boolean,
       _creator: String
