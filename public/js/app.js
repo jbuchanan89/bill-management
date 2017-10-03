@@ -12,19 +12,17 @@ $(document).ready(function(){
     });
 
 
-
-
     $('.amount').change(function(e){
       var billID = $(this).attr('data-bill');
       var amountPaid = $(this).val();
       var total = 0;
-      var val = $('.due').val();
-      var sum = 0;
+
       $('.amount').each(function(){
         total += parseFloat($(this).val());
       });
+
       $('.totalPaid strong').text("$"+total);
-      setTimeout(location.reload.bind(location), 500);
+      setTimeout(location.reload.bind(location),800);
 
       $.ajax({
         method: "PUT",
@@ -32,5 +30,4 @@ $(document).ready(function(){
       });
     });
   }
-
 });

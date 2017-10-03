@@ -1,16 +1,60 @@
-  *{
-    color: #88BBD6;
-    box-sizing: border-box;
-  }
 
+  *{
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+  }
 
   body {
     margin: 0;
+    color: #88BBD6;
+  }
+
+  h4 {
+     color: #88BBD6;
+     text-align: center;
+     font-size: 24px;
+  }
+
+  header button{
+    background-color: #88BBD6;
+    border: none;
+    padding: 15px;
+  }
+
+  a:link,
+  a:visited,
+  a:active {
+  color: #88BBD6;
+}
+
+  header  a:link,
+  header  a:visited,
+  header  a:hover {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      letter-spacing: 2px;
+  }
+
+  .view-all-bills{
+  float: right;
+  }
+
+  header {
+  height: 50px;
+  background-color: #88BBD6;
   }
 
   .welcome {
-      color: #FA7C92;
+      color: #01bf8c;
       font-size: 40px;
+      text-align: center;
+  }
+
+  .account-info{
+    margin: 20px;
   }
 
   .minimum-true {
@@ -18,30 +62,38 @@
     font-weight: bold;
   }
 
-  th {
-    color: black;
-  }
   .red{
     color: red;
   }
 
-  h2, h3, .route {
+  fa-plus {
+    color: black;
+  }
+
+  .info label {
+
+    font-size: 18px;
+  }
+
+  h2 {
     text-align: center;
     font-weight: bold;
-    color: black;
+    font-size: 30px;
+    color: #01bf8c;;
   }
   .remaining {
     text-align: center;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 24px;
+    color: black;
+  }
+
+  .diff {
+    color: red;
   }
 
   .minimum-false {
     color: red;
-  }
-
-  main {
-    margin: 0 20px 80px 20px;
   }
 
   .info{
@@ -50,10 +102,19 @@
     box-sizing: border-box;
     width: 150px;
     display: inline-block;
+    color: black;
+  }
+
+  .new input {
+    border-radius: 5px;
+    border: 1px solid #ddd;
   }
 
   .amount {
-    width: 50px;
+    width: 70px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ddd;
   }
 
   .info-sub {
@@ -70,3 +131,174 @@
     margin-top: 80px;
     text-align: center;
   }
+/*********ALL BILLS PAGE*****/
+.all-bills {
+  color: black;
+}
+
+.all-bills-header{
+  margin-bottom: 30px;
+}
+
+/*******LOGIN PAGE********/
+
+ .box {
+   width: 400px;
+   height: 500px;
+   border: 5px solid #88BBD6;
+   margin: 150px auto;
+   padding-top: 60px;
+   text-align: center;
+   color: #88BBD6;
+ }
+
+  .box h1 {
+    color: #01bf8c;
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+
+  .box h1 i {
+    font-size:  35px;
+    color: #88BBD6;
+  }
+  .box label {
+    font-weight: bold;
+  }
+  .box input {
+    width: 200px;
+    display: block;
+    margin: 5px auto 20px auto;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .login-btn, .add-bill-btn {
+    background-color: #88BBD6;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+
+
+
+
+    /*****************Table Design *****************/
+
+  table {
+    border-collapse: collapse;
+    margin-left: 4.17%;
+    margin-bottom: 50px;
+    border: 1px solid #ddd;
+  }
+
+  td {
+    padding: 8px;
+    line-height: 1.428571429;
+    border-top: 1px solid #ddd;
+    display: table-cell;
+    width: 80px;
+    font-size: 18px;
+  }
+
+  th {
+    color: black;
+  }
+
+  tr {
+    display: table-row;
+    text-align: center;
+  }
+
+  .fa-trash-o{
+    color: #88BBD6;
+  }
+
+.add-bill-form {
+  margin: 4.17%;
+}
+
+
+
+
+
+
+
+/********RESPONSIVE CSS*******/
+
+
+@media (max-width: 960px) {
+
+	* {
+		box-sizing: border-box;
+	}
+
+  .welcome{
+    font-size: 30px;
+  }
+  h1, h2, h4, .remaining {
+    font-size: 18px;
+  }
+
+  .add-bill-form p label {
+    width: 400px;
+    text-align: left;
+  }
+
+  .amount {
+    width: 40px;
+    border-radius: 0;
+    font-size: 14px;
+  }
+  .add-bill-form p input {
+    width: 200px;
+  }
+    .add-bill-form p {
+      width: 100%;
+    }
+
+    table {
+      border: none;
+      margin: 4%;
+    }
+    table th {
+      font-size: 14px;
+    }
+
+  table td{
+    font-size: 12px;
+    padding: 3px 0 3px 0;
+
+  }
+
+}
+
+
+
+  /*
+**********************GRID**************************************/
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+[class*="col-"] {
+    float: left;
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}

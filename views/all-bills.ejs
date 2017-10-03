@@ -2,22 +2,26 @@
 <html>
 <head>
     <title>Node Authentication</title>
-        <link rel="stylesheet" type="text/css" href= "/css/main.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" type="text/css" href= "/css/main.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
 
 </head>
 <body>
 
-
+  <header class="all-bills-header">
+        <button><a href="/logout">Logout</a></button>
+  </header>
       <!--
   ****************DISPLAYS BILL INFO********************** -->
     <main>
+      <div class = 'row all-bills'>
       <h1>All Bills</h1>
       <p>Date: <%=date%></p>
       <p>Name: <%=name%></p>
-      
-        <table class="table">
+    </div>
+      <p><a href= "/profile">< Go Back</a></p>
+
+        <table class="table col-11">
           <thead>
             <th>Due Date</th>
             <th>Type</th>
@@ -41,13 +45,13 @@
               <%}%>
               <td><%=bills[i].company%></td>
               <td class="minimum minimum-<%=bills[i].paid%>">$<%=bills[i].minimum%></td>
-              <td><a href="/bill-delete/<%=bills[i]._id%>"><i class="fa fa-trash-o" style="font-size:24px"></i></td></a>
+              <td><a href="/all-bills-delete/<%=bills[i]._id%>"><i class="fa fa-trash-o" style="font-size:24px"></i></td></a>
+
             </tr>
 
           <% } %>
           </tbody>
         </table>
-<p><a href= "/profile">< Go Back</a></p>
 
     </main>
 

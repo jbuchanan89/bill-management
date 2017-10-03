@@ -1,5 +1,6 @@
-var passport = require('passport');
+var passport 			= require('passport');
 var moment 					= require('moment');
+var CronJob 				= require('cron').CronJob;
 
 var User            = require('./models/user');
 var Bill            = require('./models/bill');
@@ -12,7 +13,11 @@ module.exports = function(app, passport) {
 
 
 
+	var job = new CronJob('00 30 2 * * 1-5', function() {
+	  checkForRepeatBills();
+	}, null, true, 'America/New_York');
 
+job.start();
 // **********POST REQUEST TO CREATE A BILL***********
 	app.post('/bill', isLoggedIn, function(req,res){
 		// console.log(req.body);
@@ -65,7 +70,7 @@ module.exports = function(app, passport) {
 
 
 
-// **********DELETES A BILL***********
+// **********DELETES A BILL FROM /PROFILE***********
 	app.get('/bill-delete/:id',isLoggedIn,function(req,res){
 		Bill.findOne({_id:req.params.id},function(err,bill){
 			if(bill._creator == req.user._id){
@@ -74,6 +79,21 @@ module.exports = function(app, passport) {
 				});
 			} else {
 				res.redirect('/profile');
+			}
+		});
+	});
+
+
+
+// **********DELETES A BILL FROM /ALL-BILLS***********
+	app.get('/all-bills-delete/:id',isLoggedIn,function(req,res){
+		Bill.findOne({_id:req.params.id},function(err,bill){
+			if(bill._creator == req.user._id){
+				Bill.findOneAndRemove({_id:req.params.id},function(err,data){
+					res.redirect('/all-bills');
+				});
+			} else {
+				res.redirect('/all-bills');
 			}
 		});
 	});
@@ -124,8 +144,8 @@ module.exports = function(app, passport) {
 			_creator:req.user._id,
 			dueDate: {
 				$gte: start,
-				$lte: end
-			}},function(err,bills){
+				$lte: end}
+			},function(err,bills){
 			bills.forEach(function(bill,index){
 				total += bill.minimum;
 				totalPaid += bill.amountPaid;
@@ -144,60 +164,73 @@ module.exports = function(app, passport) {
 		});
 	});
 
-
+// ******** LOADS ALL BILLS**************
 	app.get('/all-bills', isLoggedIn, function(req, res) {
 		var date = moment().format("LL");
-		var total = 0;
-		var totalPaid = 0;
-		var start = moment().subtract(15, 'days').format("L");
-		var end = moment().add(15, 'days').format('L');
 
 		Bill.find({
 			_creator:req.user._id,
-			},function(err,bills){
+		},null,{
+			sort: {
+				dueDate: 1
+			}
+		},function(err,bills){
 			res.render('all-bills.ejs', {
 				user: req.user,
 				name: req.user.local.first + ' '+req.user.local.last,
 				bills: bills,
-				total: total,
-				date: date,
-				totalPaid: totalPaid,
-				difference: total + -totalPaid,
-				start: start,
-				end: end,
+				date: date
 			});
 		});
 	});
 
-	// app.get('/test-repeats', isLoggedIn, function(req,res){
-	// 	checkForRepeatBills();
-	// });
-	//
-	// function checkForRepeatBills(req, res){
-	// 	Bill.find({
-	// 		_creator: req.user._id,
-	// 		recurring: true
-	// 	}), function(err,bills){
-	// 		bills.forEach(function(bill, index){
-	// 			console.log(bill);
-	// 			Bill.create({
-	// 				dueDate    : moment(bill.dueDate).add(1, 'M').format("L"),
-	// 				company     : bill.company,
-	// 				minimum  : bill.minimum,
-	// 				type: bill.type,
-	// 				amountPaid: 0,
-	// 				paid : false,
-	// 				recurring: true,
-	// 				_creator: req.user._id
-	// 			});
-	// 		});
-	// 	}
-	// }
-
-	app.get('/account-info', function(req, res) {
-		res.render('account.ejs', { message: req.flash('login message') });
+	app.get('/test-repeats', function(req,res){
+		// console.log('168');
+		checkForRepeatBills();
+		res.send(200);
 	});
 
+	function checkForRepeatBills(){
+		Bill.find({
+			recurring: true,
+			dueDate: { $gt: moment().add(1,'M').format("L"), $lt: moment().add(2,'M').format("L") }
+		}, function(err,bills){
+			if(!err){
+				bills.forEach(function(bill, index){
+					Bill.find({
+						dueDate: moment(bill.dueDate).add(1, 'M').format("L"),
+						_creator: bill._creator,
+						company: bill.company,
+						recurring: true
+					},function(err,data){
+						if(!err){
+							if(data.length==0){
+								// console.log('The bill',bill.company,'due on',bill.dueDate,'will be duplicated for the next month');
+								Bill.create({
+									dueDate    : moment(bill.dueDate).add(1, 'M').format("L"),
+									company     : bill.company,
+									minimum  : bill.minimum,
+									type: bill.type,
+									amountPaid: 0,
+									paid : false,
+									recurring: true,
+									_creator: bill._creator
+								});
+							} else {
+								// console.log('The bill',bill.company,'due on',bill.dueDate,'ALREADY has a duplicate');
+							}
+						}
+					})
+					// console.log(bill);
+
+				});
+				// res.send(bills);
+			} else {
+				// console.error(err);
+				// res.send(err);
+			}
+		});
+	}
 
 
 	app.get('/logout', function(req, res) {
