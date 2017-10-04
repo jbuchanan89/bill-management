@@ -30,4 +30,9 @@ $(document).ready(function(){
       });
     });
   }
+
+
+  $('.submit-form').click(function(){;
+    $('#myForm').submit();
+  });
 });

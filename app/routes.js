@@ -11,11 +11,12 @@ module.exports = function(app, passport) {
 		res.render('index.ejs');
 	});
 
-
-
-	var job = new CronJob('00 30 2 * * 1-5', function() {
+	var job = new CronJob('00 0 0 * * 1-7', function() {
 	  checkForRepeatBills();
-	}, null, true, 'America/New_York');
+	},
+	true,
+	'America/New_York'
+	);
 
 job.start();
 // **********POST REQUEST TO CREATE A BILL***********

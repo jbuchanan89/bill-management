@@ -24,8 +24,10 @@
 
   a:link,
   a:visited,
-  a:active {
-  color: #88BBD6;
+  a:active,
+  .submit-form:hover {
+    cursor: pointer;
+    color: #88BBD6;
 }
 
   header  a:link,
@@ -184,7 +186,9 @@
     margin-top: 15px;
   }
 
+{
 
+}
 
 
     /*****************Table Design *****************/
@@ -278,7 +282,9 @@
 }
 
 
-
+.all-bills {
+  margin: 5px;
+}
   /*
 **********************GRID**************************************/
 
