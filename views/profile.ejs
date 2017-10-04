@@ -2,9 +2,10 @@
 <html>
 <head>
     <title>Node Authentication</title>
+
     <link rel="stylesheet" type="text/css" href= "/css/main.css">
-  <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href= "/css/responsive.css">
 </head>
 <body>
 
@@ -35,7 +36,7 @@
         <thead>
           <th>Due Date</th>
           <th>Type</th>
-          <th>Recurring</th>
+          <!-- <th>Recurring</th> -->
           <th>Company</th>
           <th>Due</th>
           <th>Paid</th>
@@ -49,8 +50,8 @@
             <td><%=bills[i].dueDate%></td>
             <td><%=bills[i].type%></td>
 
-            <% if(bills[i].recurring == true) { %>
-              <td>Yes</td>
+            <!-- <% if(bills[i].recurring == true) { %>
+              <td>Yes</td> -->
             <%} else{ %>
               <td>No</td>
             <%}%>
@@ -75,7 +76,7 @@
           <td class="due">$<%=total%></td>
           <td></td>
           <td></td>
-          <td></td>
+
         </tr>
 
         <tr>
@@ -85,8 +86,8 @@
           <td align="right">Total Paid:</td>
           <td class="totalPaid"><strong>$<%=totalPaid%></strong></td>
           <td></td>
-          <td></td>
-          <td></td>
+          <td><form-info
+
         </tr>
 
 
@@ -108,13 +109,13 @@
 
 
           <form method="post" action="/bill" id="myForm">
-              <p class = "info"><label>Due Date:</label> <input  class="info" type="date" name="dueDate"/>
-              <p  class = "info"><label>Type: </label><input class="info" type="text" name="type"/></p>
-              <p  class = "info"><label>Company:</label> <input class="info" type="text" name="company"/></p>
-              <p  class = "info"><label>Amount Due: </label><input class="info" type="text" name="minimum"/></p>
-              <p  class = "info"><label>Recurring:</label> <input class="info checkbox" type = "checkbox" name="recurring" class= "recurring-check" value=true /></p>
+              <p class = "form-info"><label>Due Date</label> <input  class="info" type="date" name="dueDate"/>
+              <p  class ="form-info"><label>Type</label><input class="info" type="text" name="type"/></p>
+              <p  class ="form-info"><label>Company</label> <input class="info" type="text" name="company"/></p>
+              <p  class ="form-info"><label>Amount Due </label><input class="info" type="text" name="minimum"/></p>
+              <p  class ="form-info"><label>Recurring</label> <input class="info checkbox" type = "checkbox" name="recurring" class= "recurring-check" value=true /></p>
 
-              <h2 class="submit-form"> <span><i class="fa fa-plus" style="font-size:24px"></i></span>   Add New Bill</h2>
+              <h2 class="submit-form"><span><i class="fa fa-plus" style="font-size:24px"></i></span>   Add New Bill</h2>
           </form>
         </div>
   </div>

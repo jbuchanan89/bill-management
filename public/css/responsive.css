@@ -1,0 +1,66 @@
+@media screen and (max-width: 960px) {
+
+
+    .welcome{
+      font-size: 30px;
+    }
+    h1, h2, h4, .remaining {
+      font-size: 25px;
+    }
+
+    .add-bill-form p label {
+    display: inline-block;
+    width: 91.66%;
+    }
+
+    .amount {
+    width: 40px;
+    border-radius: 0;
+    font-size: 14px;
+    }
+
+    .add-bill-form p input {
+    width: 200px;
+    height: 28px;
+    font-size: 16px;
+    }
+
+    .add-bill-form p {
+      width: 100%;
+    }
+
+    table {
+      margin: 10px;
+    }
+
+    table th {
+      font-size: 14px;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    td .amount {
+      width: 30px;
+      font-size: 14px;
+    }
+
+    table td {
+      font-size: 14px;
+      padding: 3px 0 3px 0;
+    }
+
+    .main-nav {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+    }
+
+    .main-nav button {
+      width: 100px;
+      font-size: 16px;
+      margin: 10px; auto;
+      display: inline-block;
+    }
+}

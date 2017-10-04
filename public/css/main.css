@@ -1,23 +1,25 @@
 
   *{
     box-sizing: border-box;
-    font-size: 16px;
     font-family: sans-serif;
   }
 
   body {
     margin: 0;
-    color: #88BBD6;
   }
 
   h4 {
-     color: #88BBD6;
+     color: #07889B;
      text-align: center;
      font-size: 24px;
   }
 
+  button:hover{
+    cursor: pointer;
+  }
+
   header button{
-    background-color: #88BBD6;
+    background-color: #66B9BF;
     border: none;
     padding: 15px;
   }
@@ -27,8 +29,8 @@
   a:active,
   .submit-form:hover {
     cursor: pointer;
-    color: #88BBD6;
-}
+    color: #07889B;
+  }
 
   header  a:link,
   header  a:visited,
@@ -46,11 +48,11 @@
 
   header {
   height: 50px;
-  background-color: #88BBD6;
+  background-color: #66B9BF;
   }
 
   .welcome {
-      color: #01bf8c;
+      color: #E37222;
       font-size: 40px;
       text-align: center;
   }
@@ -68,26 +70,18 @@
     color: red;
   }
 
-  fa-plus {
-    color: black;
-  }
-
-  .info label {
-
-    font-size: 18px;
-  }
-
   h2 {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-    color: #01bf8c;;
+    color: #07889B;
   }
+
   .remaining {
     text-align: center;
     font-weight: bold;
     font-size: 24px;
-    color: black;
+    color: #07889B ;
   }
 
   .diff {
@@ -98,13 +92,18 @@
     color: red;
   }
 
-  .info{
+  .form-info label {
+    font-weight: bold;
+    color:#E37222;
+  }
+
+  .form-info, .info{
     margin: 5px;
     text-align: center;
     box-sizing: border-box;
-    width: 150px;
+    width: 170px;
+    font-size: 18px;
     display: inline-block;
-    color: black;
   }
 
   .new input {
@@ -133,9 +132,13 @@
     margin-top: 80px;
     text-align: center;
   }
+
+
+
 /*********ALL BILLS PAGE*****/
 .all-bills {
-  color: black;
+  color: #E37222;
+  margin: 10px;
 }
 
 .all-bills-header{
@@ -144,56 +147,55 @@
 
 /*******LOGIN PAGE********/
 
- .box {
-   width: 400px;
-   height: 500px;
-   border: 5px solid #88BBD6;
-   margin: 150px auto;
-   padding-top: 60px;
-   text-align: center;
-   color: #88BBD6;
- }
+  .box, .signup-form {
+    width: 60%;
+    background-color: white;
+    height: 500px;
+    margin: 160px auto;
+    text-align: center;
+  }
 
-  .box h1 {
-    color: #01bf8c;
+
+  .signup-link {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .box h1, signup-form h1 {
+    color: #E37222;
     font-weight: bold;
     font-size: 35px;
-    margin-bottom: 30px;
   }
 
-  .box h1 i {
-    font-size:  35px;
-    color: #88BBD6;
-  }
   .box label {
     font-weight: bold;
   }
+
   .box input {
-    width: 200px;
+    width: 250px;
     display: block;
     margin: 5px auto 20px auto;
     border-radius: 5px;
-    padding: 5px;
+    padding: 8px;
   }
 
-  .login-btn, .add-bill-btn {
-    background-color: #88BBD6;
+  .login-btn, .add-bill-btn, .signup-btn, .signup-form button {
+    background-color: #E37222;
     color: #fff;
     border: none;
     border-radius: 10px;
-    width: 150px;
+    width: 180px;
+    height: 40px;
     font-size: 18px;
     margin-top: 15px;
   }
 
-{
-
-}
 
 
     /*****************Table Design *****************/
 
   table {
+    width: 91.66%;
     border-collapse: collapse;
     margin-left: 4.17%;
     margin-bottom: 50px;
@@ -205,6 +207,10 @@
     line-height: 1.428571429;
     border-top: 1px solid #ddd;
     display: table-cell;
+    font-size: 18px;
+  }
+
+  td .amount {
     width: 80px;
     font-size: 18px;
   }
@@ -228,65 +234,36 @@
 
 
 
-
-
-
-
-/********RESPONSIVE CSS*******/
-
-
-@media (max-width: 960px) {
-
-	* {
-		box-sizing: border-box;
-	}
-
-  .welcome{
-    font-size: 30px;
+/********Signup form*********/
+  .signup-box {
+    margin-bottom: 0 auto;
   }
-  h1, h2, h4, .remaining {
-    font-size: 18px;
+  .signup-box h1 {
+    color:  #E37222;
+    font-size: 35px;
   }
-
-  .add-bill-form p label {
-    width: 400px;
-    text-align: left;
+  .signup-form label {
+    font-weight: bold;
+  }
+  .signup-form input{
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    border: .5px solid #ddd;
+    border-radius: 5px;
   }
 
-  .amount {
-    width: 40px;
-    border-radius: 0;
-    font-size: 14px;
-  }
-  .add-bill-form p input {
-    width: 200px;
-  }
-    .add-bill-form p {
-      width: 100%;
-    }
-
-    table {
-      border: none;
-      margin: 4%;
-    }
-    table th {
-      font-size: 14px;
-    }
-
-  table td{
-    font-size: 12px;
-    padding: 3px 0 3px 0;
-
+  .signup-message {
+    text-align: center;
+    margin-top: 0;
   }
 
-}
 
 
-.all-bills {
-  margin: 5px;
-}
-  /*
-**********************GRID**************************************/
+
+
+
+  /*********************GRID**************************************/
 
 .row::after {
     content: "";

@@ -1,6 +1,6 @@
 var passport 			= require('passport');
 var moment 					= require('moment');
-var CronJob 				= require('cron').CronJob;
+var cron 					= require('node-cron');
 
 var User            = require('./models/user');
 var Bill            = require('./models/bill');
@@ -11,14 +11,10 @@ module.exports = function(app, passport) {
 		res.render('index.ejs');
 	});
 
-	var job = new CronJob('00 0 0 * * 1-7', function() {
+	cron.schedule('0 0 * * *', function(){
+		// console.log('----checking for repeat bills----');
 	  checkForRepeatBills();
-	},
-	true,
-	'America/New_York'
-	);
-
-job.start();
+	});
 // **********POST REQUEST TO CREATE A BILL***********
 	app.post('/bill', isLoggedIn, function(req,res){
 		// console.log(req.body);
@@ -199,7 +195,7 @@ job.start();
 			if(!err){
 				bills.forEach(function(bill, index){
 					Bill.find({
-						dueDate: moment(bill.dueDate).add(1, 'M').format("L"),
+						dueDate: moment(bill.dueDate,"L").add(1, 'M').format("L"),
 						_creator: bill._creator,
 						company: bill.company,
 						recurring: true
@@ -208,7 +204,7 @@ job.start();
 							if(data.length==0){
 								// console.log('The bill',bill.company,'due on',bill.dueDate,'will be duplicated for the next month');
 								Bill.create({
-									dueDate    : moment(bill.dueDate).add(1, 'M').format("L"),
+									dueDate    : moment(bill.dueDate,"L").add(1, 'M').format("L"),
 									company     : bill.company,
 									minimum  : bill.minimum,
 									type: bill.type,

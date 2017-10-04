@@ -1,0 +1,41 @@
+body {
+    background-color: #07889B;
+}
+
+
+ h1{
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+  padding: 50px;
+  color:  #fff;
+}
+  h2 {
+    font-size: 40px;
+    padding: 60px;
+  }
+
+.main-nav {
+  width:50%;
+  background-color: white;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.main-nav p {
+  text-align: center;
+  margin: 0 auto;
+}
+.main-nav button {
+  margin: 10px; auto;
+  display: inline-block;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover {
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+}
