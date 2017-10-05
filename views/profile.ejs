@@ -1,7 +1,9 @@
 <!doctype html>
 <html>
 <head>
-    <title>Node Authentication</title>
+    <title>Bill Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+    <meta charset="utf-8">
 
     <link rel="stylesheet" type="text/css" href= "/css/main.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
@@ -23,7 +25,6 @@
 <div class= 'account-info'>
 
   <h4><%=start%> - <%=end%></h4>
-
 
 
 </div>
@@ -50,11 +51,6 @@
             <td><%=bills[i].dueDate%></td>
             <td><%=bills[i].type%></td>
 
-            <!-- <% if(bills[i].recurring == true) { %>
-              <td>Yes</td> -->
-            <%} else{ %>
-              <td>No</td>
-            <%}%>
             <td><%=bills[i].company%></td>
             <td class="minimum minimum-<%=bills[i].paid%>">$<%=bills[i].minimum%></td>
             <td> <input class="amount" type="text" data-bill="<%=bills[i]._id%>" value="<%=bills[i].amountPaid%>"/></td>

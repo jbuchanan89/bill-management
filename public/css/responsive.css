@@ -4,7 +4,8 @@
     .welcome{
       font-size: 30px;
     }
-    h1, h2, h4, .remaining {
+
+    h1, .main-nav h2, h4, .remaining {
       font-size: 25px;
     }
 
@@ -49,12 +50,6 @@
     table td {
       font-size: 14px;
       padding: 3px 0 3px 0;
-    }
-
-    .main-nav {
-      margin: 0;
-      padding: 0;
-      max-width: 100%;
     }
 
     .main-nav button {

@@ -12,9 +12,11 @@ module.exports = function(app, passport) {
 	});
 
 	cron.schedule('0 0 * * *', function(){
-		// console.log('----checking for repeat bills----');
+		console.log('----checking for repeat bills----');
 	  checkForRepeatBills();
 	});
+
+
 // **********POST REQUEST TO CREATE A BILL***********
 	app.post('/bill', isLoggedIn, function(req,res){
 		// console.log(req.body);

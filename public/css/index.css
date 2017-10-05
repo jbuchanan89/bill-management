@@ -1,7 +1,14 @@
-body {
-    background-color: #07889B;
-}
+/*******LANDING PAGE CSS INDEX.EJS FILE********/
 
+
+  * {
+    box-sizing: border-box;
+  }
+
+
+  body {
+      background-color: #07889B;
+  }
 
  h1{
   margin: 0;
@@ -10,13 +17,17 @@ body {
   padding: 50px;
   color:  #fff;
 }
-  h2 {
+
+  .main-nav h2 {
+    padding: 40px;
+    text-align: center;
+    font-weight: bold;
     font-size: 40px;
-    padding: 60px;
+    color: #07889B;
   }
 
 .main-nav {
-  width:50%;
+  width:60%;
   background-color: white;
   height: 300px;
   margin: 0 auto;
@@ -24,8 +35,8 @@ body {
 
 .main-nav p {
   text-align: center;
-  margin: 0 auto;
 }
+
 .main-nav button {
   margin: 10px; auto;
   display: inline-block;

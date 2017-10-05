@@ -21,8 +21,12 @@ $(document).ready(function(){
         total += parseFloat($(this).val());
       });
 
+      var totalDue = $('.due').text().replace("$","");
+      var totalRemaining = totalDue - total;
+
       $('.totalPaid strong').text("$"+total);
-      setTimeout(location.reload.bind(location),800);
+      $('.remaining.diff').text("$"+totalRemaining);
+      // setTimeout(location.reload.bind(location),800);
 
       $.ajax({
         method: "PUT",

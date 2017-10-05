@@ -27,8 +27,17 @@
   a:link,
   a:visited,
   a:active,
+  .submit-form:link,
+  .submit-form:visited,
   .submit-form:hover {
     cursor: pointer;
+    color: #07889B;
+  }
+
+  .submit-form {
+    text-align: center;
+  }
+  .add-bill-form h2 {
     color: #07889B;
   }
 
@@ -70,7 +79,8 @@
     color: red;
   }
 
-  h2 {
+  .signup-form h2 {
+    padding-top: 40px;
     text-align: center;
     font-weight: bold;
     font-size: 30px;
@@ -101,7 +111,7 @@
     margin: 5px;
     text-align: center;
     box-sizing: border-box;
-    width: 170px;
+    width: 200px;
     font-size: 18px;
     display: inline-block;
   }
@@ -147,7 +157,7 @@
 
 /*******LOGIN PAGE********/
 
-  .box, .signup-form {
+  .box {
     width: 60%;
     background-color: white;
     height: 500px;
@@ -228,13 +238,26 @@
     color: #88BBD6;
   }
 
-.add-bill-form {
-  margin: 4.17%;
-}
+  .add-bill-form {
+    margin: 4.17%;
+    text-align: center;
+  }
 
-
+  #myForm {
+    width: 100%;
+    margin: 0;
+  }
 
 /********Signup form*********/
+
+  .signup-form {
+    width: 60%;
+    background-color: white;
+    height: 500px;
+    margin:100px auto;
+    text-align: center;
+  }
+
   .signup-box {
     margin-bottom: 0 auto;
   }
