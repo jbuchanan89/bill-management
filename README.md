@@ -15,3 +15,8 @@ Summary:
 The app that I have created was created to easily manage your bills. You can add bills and mark them recurring so that it automatically creates a bill for the next month. In the user dashboard they are able to view the last 15 days and the next 15 days. There is a cron job that runs to create new bills if one has not been created if it is a recurring bill.
 
 In the dashboard you can mark the bill paid and enter how much of it you paid. You also can see the total due for the rest of the bills. There is an option to see all bills and that shows all bills that was created by that user.
+
+
+Technology:
+
+JavaScript, node, jquery, mongoDb
