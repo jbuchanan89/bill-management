@@ -18,6 +18,11 @@
     cursor: pointer;
   }
 
+  header a button {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+  }
   header button{
     background-color: #66B9BF;
     border: none;
@@ -56,7 +61,7 @@
   }
 
   header {
-  height: 50px;
+  height: 60px;
   background-color: #66B9BF;
   }
 
