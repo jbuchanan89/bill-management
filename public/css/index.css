@@ -3,6 +3,7 @@
 
   * {
     box-sizing: border-box;
+
   }
 
 
@@ -13,17 +14,20 @@
  h1{
   margin: 0;
   font-size: 40px;
+  font-family: 'Roboto Condensed', sans-serif;
   text-align: center;
   padding: 50px;
   color:  #fff;
+  text-transform: uppercase;
 }
 
   .main-nav h2 {
     padding: 40px;
     text-align: center;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 40px;
     color: #07889B;
+
   }
 
 .main-nav {
