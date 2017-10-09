@@ -279,6 +279,7 @@
     padding: 8px;
     border: .5px solid #ddd;
     border-radius: 5px;
+    width: 250px;
   }
 
   .signup-message {
