@@ -1,12 +1,27 @@
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 930px) {
 
   .signup-form, .box, .main-nav {
     width: 91.66%;
     margin-top: 50px;
+    height: 500px;
   }
 
+  form h2 {
+    margin-bottom: 30px;
+  }
+
+  .main-nav {
+    width: 91.66%;
+    padding: 20px;
+    height: 300px;
+  }
     .welcome{
       font-size: 30px;
+    }
+
+    .header h1 {
+      margin: 10px 20px;
+      font-size: 20px;
     }
 
     h1, .main-nav h2, h4, .remaining {
@@ -34,6 +49,10 @@
       width: 100%;
     }
 
+    .add-bill-form h2{
+      margin-bottom: 100px;
+    }
+
     table {
       width: 91.66%;
       margin: 4.17%;
@@ -53,8 +72,7 @@
     }
 
     table td {
-      font-size: 14px;
-      padding: 3px 0 3px 0;
+      font-size: 16px;
     }
 
     .signup-form input, .box input {
@@ -64,8 +82,36 @@
 
     .main-nav button {
       width: 200px;
-      font-size: 16px;
-      margin: 10px; auto;
+      font-size: 20px;
+      margin: 10px 40px;
       display: inline-block;
     }
+
+    .form-info .checkbox {
+      width: 60px;
+      margin-top: 10px;
+    }
+
+    input[type=checkbox] {
+
+     -ms-transform: scale(1); /* IE */
+     -moz-transform: scale(1); /* FF */
+     -webkit-transform: scale(1); /* Safari and Chrome */
+     -o-transform: scale(1); /* Opera */
+      padding: 10px;
+    }
+}
+
+
+@media screen and (max-width: 630px) {
+
+  .main-nav {
+    height: 320px;
+    padding: 10px;
+  }
+
+  .main-nav h2 {
+    padding-top: 30px;
+  }
+
 }

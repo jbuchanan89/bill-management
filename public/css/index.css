@@ -1,56 +1,50 @@
 /*******LANDING PAGE CSS INDEX.EJS FILE********/
-
-
   * {
     box-sizing: border-box;
 
   }
 
-
   body {
       background-color: #07889B;
   }
 
- h1{
-  margin: 0;
-  font-size: 40px;
-  font-family: 'Roboto Condensed', sans-serif;
+ .header h1{
+  margin: 50px 0 20px 0;
+  font-size: 25px;
   text-align: center;
-  padding: 50px;
   color:  #fff;
   text-transform: uppercase;
-}
-
-  .main-nav h2 {
-    padding: 40px;
-    text-align: center;
-    font-weight: normal;
-    font-size: 40px;
-    color: #07889B;
-
   }
 
-.main-nav {
-  width:60%;
-  background-color: white;
-  height: 300px;
-  margin: 0 auto;
-}
+  .main-nav h2 {
+    padding: 60px 20px 0 20px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 35px;
+    color: #07889B;
+  }
 
-.main-nav p {
-  text-align: center;
-}
+  .main-nav {
+    width:60%;
+    background-color: white;
+    height: 350px;
+    margin: 0 auto;
+  }
 
-.main-nav button {
-  margin: 10px; auto;
-  display: inline-block;
-}
+  .main-nav p {
+    text-align: center;
+  }
 
-a:link,
-a:visited,
-a:active,
-a:hover {
-  cursor: pointer;
-  color: #fff;
-  text-decoration: none;
-}
+  .main-nav button {
+    margin: 30px 60px 10px 60px;
+    display: inline-block;
+  }
+
+  a:link,
+  a:visited,
+  a:active,
+  a:hover {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+  }

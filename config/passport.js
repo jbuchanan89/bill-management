@@ -31,13 +31,12 @@ module.exports = function(passport) {
 
             if (err)
                 return done(err);
-
             if (user) {
                 return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
             } else {
 
                 var newUser             = new User();
-                
+
                 newUser.local.first     = req.body.first;
                 newUser.local.last      = req.body.last;
                 newUser.local.email     = email;
