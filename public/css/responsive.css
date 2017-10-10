@@ -1,5 +1,9 @@
 @media screen and (max-width: 960px) {
 
+  .signup-form, .box, .main-nav {
+    width: 91.66%;
+    margin-top: 50px;
+  }
 
     .welcome{
       font-size: 30px;
@@ -53,15 +57,15 @@
       padding: 3px 0 3px 0;
     }
 
-    .signup-form input {
-      width: 180px;
-      font-size: 30px;
+    .signup-form input, .box input {
+      width: 250px;
+      font-size: 16px;
     }
 
     .main-nav button {
-      width: 90px;
+      width: 200px;
       font-size: 16px;
-      margin: 5px; auto;
+      margin: 10px; auto;
       display: inline-block;
     }
 }
