@@ -150,6 +150,8 @@
 
 
 
+
+
 /*********ALL BILLS PAGE*****/
 .all-bills {
   color: #E37222;
@@ -160,6 +162,10 @@
   margin-bottom: 30px;
 }
 
+
+
+
+
 /*******LOGIN PAGE********/
 
   .box {
@@ -169,7 +175,6 @@
     margin: 160px auto;
     text-align: center;
   }
-
 
   .signup-link {
     font-weight: bold;
@@ -252,6 +257,9 @@
     width: 100%;
     margin: 0;
   }
+
+
+
 
 /********Signup form*********/
 
