@@ -6,6 +6,7 @@
 
   body {
     margin: 0;
+    width: 100%;
   }
 
 
@@ -74,6 +75,7 @@
   header {
   height: 60px;
   background-color: #66B9BF;
+  width: 100%;
   }
 
   .welcome {
@@ -112,6 +114,7 @@
     font-weight: bold;
     font-size: 24px;
     color: #07889B ;
+    margin: 20px;
   }
 
   .diff {
@@ -248,7 +251,7 @@
   table {
     width: 91.66%;
     border-collapse: collapse;
-    margin: 4.17%;
+    margin: 15px 4.17%;
     border: 1px solid #ddd;
   }
 
@@ -337,7 +340,9 @@
     content: "";
     clear: both;
     display: table;
+    width: 100%;
 }
+
 [class*="col-"] {
     float: left;
 }

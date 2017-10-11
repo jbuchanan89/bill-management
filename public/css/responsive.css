@@ -1,20 +1,20 @@
 @media screen and (max-width: 930px) {
 
-  .signup-form, .box, .main-nav {
-    width: 91.66%;
-    margin-top: 50px;
-    height: 500px;
-  }
+    .signup-form, .box, .main-nav {
+      width: 91.66%;
+      margin-top: 50px;
+      height: 500px;
+    }
 
-  form h2 {
-    margin-bottom: 30px;
-  }
+    form h2 {
+      margin-bottom: 30px;
+    }
 
-  .main-nav {
-    width: 91.66%;
-    padding: 20px;
-    height: 300px;
-  }
+    .main-nav {
+      width: 91.66%;
+      padding: 20px;
+      height: 300px;
+    }`
     .welcome{
       font-size: 30px;
     }
@@ -53,26 +53,12 @@
       margin-bottom: 100px;
     }
 
-    table {
-      width: 91.66%;
-      margin: 4.17%;
-    }
-
-    table th {
-      font-size: 14px;
-    }
-
     form {
       text-align: center;
     }
 
-    td .amount {
-      width: 50px;
+    table td, table th {
       font-size: 14px;
-    }
-
-    table td {
-      font-size: 16px;
     }
 
     .signup-form input, .box input {
@@ -112,6 +98,20 @@
 
   .main-nav h2 {
     padding-top: 30px;
+  }
+
+  table td {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  table .amount {
+    width: 35px;
+    font-size: 12px;
+  }
+
+  table input, .fa-trash-o {
+    font-size: 12px;
   }
 
 }
