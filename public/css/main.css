@@ -294,42 +294,6 @@
 
 
 
-/********Signup form*********/
-
-  .signup-form {
-    width: 60%;
-    background-color: white;
-    height: 500px;
-    margin:50px auto;
-    text-align: center;
-  }
-
-  .signup-box {
-    margin-bottom: 0 auto;
-  }
-  .signup-box h1 {
-    color:  #E37222;
-    font-size: 35px;
-  }
-  .signup-form label {
-    font-weight: bold;
-  }
-  .signup-form input{
-    display: block;
-    margin: 10px auto;
-    padding: 8px;
-    border: .5px solid #ddd;
-    border-radius: 5px;
-    width: 300px;
-    font-size: 20px;
-  }
-
-  .signup-message {
-    text-align: center;
-    margin-top: 0;
-  }
-
-
 
 
 

@@ -1,6 +1,61 @@
 @media screen and (max-width: 930px) {
 
-    .signup-form, .box, .main-nav {
+/******* Index.js Responsive******/
+   .signup-form, .how {
+      width: 91.66%;
+      margin: 4.17%;
+    }
+
+    .background-image {
+      height: 400px;
+      width: 100%;
+    }
+
+  .how h4 {
+    margin: 10px;
+  }
+
+  .steps {
+    width: 91.66%;
+    height: 100px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin: 0 4.16% 0 4.16%;
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+  }
+
+  .steps .step-number {
+    font-weight: bold;
+    font-size: 35px;
+
+  }
+  /*div .row .steps  {
+        font-color: #07889B;
+  }*/
+  .steps .summary {
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  .signup-form h2 {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+
+  .signup-form, .how {
+    border: 1px solid #ddd;
+    font-size: 18px;
+  }
+
+ .how {
+   height: 400px;
+ }
+
+
+/**************Everything Else**********/
+
+    .signup-form, .box, .main-nav, {
       width: 91.66%;
       margin-top: 50px;
       height: 500px;
@@ -10,11 +65,11 @@
       margin-bottom: 30px;
     }
 
-    .main-nav {
+    /*.main-nav {
       width: 91.66%;
       padding: 20px;
       height: 300px;
-    }`
+    }`*/
     .welcome{
       font-size: 30px;
     }
@@ -66,12 +121,12 @@
       font-size: 16px;
     }
 
-    .main-nav button {
+    /*.main-nav button {
       width: 200px;
       font-size: 20px;
       margin: 10px 40px;
       display: inline-block;
-    }
+    }*/
 
     .form-info .checkbox {
       width: 60px;
@@ -90,15 +145,15 @@
 
 
 @media screen and (max-width: 630px) {
-
+/*
   .main-nav {
     height: 320px;
     padding: 10px;
-  }
-
+  }*/
+/*
   .main-nav h2 {
     padding-top: 30px;
-  }
+  }*/
 
   table td {
     font-size: 12px;

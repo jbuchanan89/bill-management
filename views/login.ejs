@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" type="text/css" href= "/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href= "/css/index.css">
+    <link rel="stylesheet" type="text/css" href= "/css/login.css">
     <link rel="stylesheet" type="text/css" href= "/css/main.css">
     <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
@@ -13,9 +13,14 @@
 
 </head>
 <body>
+  <header class ="login-page-header">
+    <p><strong>Email:</strong> Demo@email.com </p>
+    <p><strong>Password:</strong> Demo123</p>
+  </header>
   <p class ="logo">
-      Paid It <i class="fa fa-check-square-o"></i>
+      Paid It <i class="fa fa-pagelines"></i>
   </p>
+
   <div class = 'box'>
 <h1><i class="fa fa-lock"></i>  USER LOGIN</h1>
 
@@ -27,7 +32,7 @@
     <form action="/login", method="post">
       <div class= "username">
         <label>Email</label>
-        <input type="text" name="email">
+        <input type="text" required name="email">
       </div>
 
       <div class ="password">

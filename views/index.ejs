@@ -4,10 +4,8 @@
     <title>Bill Management</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
     <meta charset="utf-8">
-
-    <link rel="stylesheet" type="text/css" href= "/css/main.css">
     <link rel="stylesheet" type="text/css" href= "/css/index.css">
-
+    <link rel="stylesheet" type="text/css" href= "/css/main.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
     <link rel="stylesheet" type="text/css" href= "/css/responsive.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto+Condensed|Source+Sans+Pro" rel="stylesheet">
@@ -15,10 +13,78 @@
 
 </head>
 <body>
-<div class="header">
-  <p class ="logo">
-      Paid It <i class="fa fa-check-square-o"></i>
-  </p>
+  <div class = "row">
+    <div class="background-image col-8">
+      <p class ="logo">
+          Paid It <i class="fa fa-pagelines"></i>
+      </p>
+      <h2></h2>
+    </div>
+    <div class="signup-form col-4">
+
+
+          <h2><span class="fa fa-sign-in"></span> Signup</h2>
+
+        <form action="/signup" method="post">
+
+            <label>First Name</label>
+            <input type="text"  name="first">
+
+            <label>Last Name</label>
+            <input type="text" name="last">
+
+            <label>Email</label>
+            <input type="text" name="email">
+
+            <label>Password</label>
+            <input type="password" name="password">
+
+            <button type="submit">Signup</button>
+      </form>
+
+      <p> Already have an Account?     <a href="/login">Login Now</a>
+  </div>
+</div>
+
+<hr>
+
+<div class ="how">
+  <h4>How It Works</h4>
+  <div class="row">
+    <div class="steps col-3">
+      <p class="step-number">1</p>
+      <p class="summary">
+        Add Bill <i class="fa fa-plus" aria-hidden="true"></i>
+      </p>
+    </div>
+
+    <div class="steps col-3">
+      <p class="step-number">2</p>
+      <p class="summary">
+        See Upcoming Bills  <i class="fa fa-eye" aria-hidden="true"></i>
+      </p>
+    </div>
+
+    <div class="steps col-3">
+      <p class="step-number">3</p>
+      <p class="summary">
+        Mark Bills Paid  <i class="fa fa-check-square-o" aria-hidden="true"></i>
+      </p>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <div class="header">
+
   <h1> "One place to manage all of your bills"</h1>
 </div>
   <div class ="main-nav">
@@ -28,8 +94,4 @@
         <a href="/signup"><button class= "login-btn">Signup</button></a>
       </p>
   </div>
-</div>
-
-
-</body>
-</html>
+</div> -->

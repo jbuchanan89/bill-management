@@ -1,50 +1,89 @@
-/*******LANDING PAGE CSS INDEX.EJS FILE********/
-  * {
-    box-sizing: border-box;
 
+  .background-image {
+    height: 550px;
+    background-image:
+    linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+    ),
+    url(https://images.unsplash.com/photo-1506485338023-6ce5f36692df?dpr=1&auto=compress,format&fit=crop&w=1050&h=&q=80&cs=tinysrgb&crop=);
+    /*url(https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a?dpr=1&auto=compress,format&fit=crop&w=1053&h=&q=80&cs=tinysrgb&crop=);*/
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
 
-  body {
-      background-color: #07889B;
+  .background-image .logo{
+    margin: 150px auto;
+    font-size: 80px;
   }
 
- .header h1{
-  margin: 50px 0 20px 0;
-  font-size: 25px;
-  text-align: center;
-  color:  #fff;
-  text-transform: uppercase;
-  }
-
-  .main-nav h2 {
-    padding: 60px 20px 0 20px;
+  .background-image h2{
+    margin: 150px auto;
     text-align: center;
+    font-size: 25px;
     font-weight: normal;
-    font-size: 35px;
+    color: #fff;
+  }
+
+  .how {
+    height: 300px;
+  }
+
+  .how h4 {
+        font-family: 'Architects Daughter', cursive;
+        font-size: 40px;
+  }
+
+  .steps {
+    height: 200px;
+    border: 2px solid #ddd;
+    margin: 0 4.16% 4.16% 4.16%;
+    text-align: center;
+  }
+
+  .steps .step-number {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Architects Daughter', cursive;
+    margin: 5px;
+  }
+
+  .steps .summary {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 25px;
     color: #07889B;
   }
 
-  .main-nav {
-    width:60%;
+  /********Signup form*********/
+
+
+  .signup-form {
     background-color: white;
-    height: 350px;
-    margin: 0 auto;
-  }
-
-  .main-nav p {
     text-align: center;
+    height: 550px;
+    margin: 0;
   }
 
-  .main-nav button {
-    margin: 30px 60px 10px 60px;
-    display: inline-block;
+  .signup-form input {
+    width: 250px;
+    font-size: 16px;
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    border: .5px solid #ddd;
+    border-radius: 5px;
   }
 
-  a:link,
-  a:visited,
-  a:active,
-  a:hover {
-    cursor: pointer;
-    color: #fff;
-    text-decoration: none;
+  .signup-form h2 {
+    padding-top: 0;
+    margin-top: 15px;
+  }
+
+  .signup-form label {
+    font-weight: bold;
+  }
+
+  .signup-form button {
+    margin-bottom: 10px;
   }
