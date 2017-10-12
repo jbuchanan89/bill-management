@@ -1,6 +1,6 @@
 
   .background-image {
-    height: 550px;
+    height: 500px;
     background-image:
     linear-gradient(
     rgba(0, 0, 0, 0.7),
@@ -38,7 +38,6 @@
   }
 
   .steps {
-    height: 200px;
     border: 2px solid #ddd;
     margin: 0 4.16% 4.16% 4.16%;
     text-align: center;
@@ -57,11 +56,7 @@
     color: #07889B;
   }
 
-   .signup-form h1 {
-    color: #E37222;
-    font-weight: bold;
-    font-size: 30px;
-  }
+
 
   /*******Login Form***************/
 
@@ -75,12 +70,17 @@
 
   /********Signup form*********/
 
+  .signup-form h1 {
+   color: #E37222;
+   font-weight: bold;
+   font-size: 30px;
+ }
 
   .signup-form, .login-form {
     background-color: rgba(255,255,255,0.85);
     text-align: center;
-    height: 550px;
     margin: 0;
+    height: 500px;
   }
 
   .signup-form input, .login-form input {
@@ -117,8 +117,4 @@
     font-weight: normal;
     color: #07889B;
     font-size: 18px;
-  }
-
-  .login-form-2, .signup-form-2 {
-    display: none;
   }

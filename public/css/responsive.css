@@ -2,19 +2,17 @@
 
 /******* Index.js Responsive******/
   .signup-form {
-    height: 500px;
-    width: 91.66%;
-    margin: 4.17%;
+    height: auto;
+    width: 95%;
+    margin: 0 2.5%;
     border: 1px solid #ddd;
     font-size: 18px;
   }
 
   .login-form, .how {
-      width: 91.66%;
-      margin: 4.17%;
-      border: 1px solid #ddd;
+      width: 95%;
+      margin: 0 2.5%;
       font-size: 18px;
-      height: 400px;
     }
 
     .signup-form input {
@@ -23,30 +21,26 @@
     }
 
     .background-image {
-      height: 350px;
       padding-top: 20px;
+      height: auto;
     }
-/*.how {
-  display: none;
-}*/
+
   .how h4 {
     margin: 10px;
   }
 
   .steps {
     width: 91.66%;
-    height: 100px;
-    border: none;
     border-bottom: 1px solid #ddd;
-    margin: 0 4.16% 0 4.16%;
+    margin: 10px 2.5%;
     text-align: center;
     font-family: 'Architects Daughter', cursive;
+    padding: 10px;
   }
 
   .steps .step-number {
     font-weight: bold;
     font-size: 35px;
-
   }
 
   .steps .summary {
@@ -59,17 +53,15 @@
     padding-top: 20px;
   }
 
- .how {
-   height: 400px;
- }
-
  .logo-div {
    width: 100%;
  }
 
-.logo-div .logo {
-  margin-top: 100px;
-}
+ .logo-div .logo {
+   margin: 0px auto;
+   font-size: 50px;
+ }
+
 /**************Everything Else**********/
 
     form h2 {
@@ -121,8 +113,6 @@
     table td, table th {
       font-size: 14px;
     }
-
-
 
     .form-info .checkbox {
       width: 60px;
