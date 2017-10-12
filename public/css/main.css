@@ -234,7 +234,7 @@
 
   td {
     padding: 8px;
-    line-height: 1.428571429;
+    line-height: 1.8;
     border-top: 1px solid #ddd;
     display: table-cell;
     font-size: 18px;
@@ -247,8 +247,10 @@
 
   th {
     background-color: #66B9BF;
+    opacity: .8;
     color: black;
     font-size: 20px;
+    padding: 5px;
   }
 
   tr {

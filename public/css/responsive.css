@@ -1,8 +1,15 @@
 @media screen and (max-width: 930px) {
 
 /******* Index.js Responsive******/
+  .signup-form {
+    height: 500px;
+    width: 91.66%;
+    margin: 4.17%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+  }
 
-   .signup-form, .login-form, .how {
+  .login-form, .how {
       width: 91.66%;
       margin: 4.17%;
       border: 1px solid #ddd;
@@ -19,7 +26,9 @@
       height: 350px;
       padding-top: 20px;
     }
-
+/*.how {
+  display: none;
+}*/
   .how h4 {
     margin: 10px;
   }

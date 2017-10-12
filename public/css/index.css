@@ -118,3 +118,7 @@
     color: #07889B;
     font-size: 18px;
   }
+
+  .login-form-2, .signup-form-2 {
+    display: none;
+  }
