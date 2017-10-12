@@ -25,10 +25,6 @@
 <h1><i class="fa fa-lock"></i>  USER LOGIN</h1>
 
 
-<% if (message.length > 0) { %>
-    <div class="alert alert-danger"><%= message %></div>
-<% } %>
-
     <form action="/login", method="post">
       <div class= "username">
         <label>Email</label>
@@ -37,7 +33,7 @@
 
       <div class ="password">
       <label>Password</label>
-      <input type="password" name="password">
+      <input type="password" required name="password">
     </div>
 
       <button class= "login-btn"type="submit">Login</button>
@@ -46,10 +42,6 @@
 
 <a href="/signup"><p class ="signup-link">Sign Up Now</p></a>
 
-
-<!-- <p> Demo Account:</p>
-<p> Email: demo@email.com</p>
-<p>Password: Demo123</p> -->
 </div>
 
 

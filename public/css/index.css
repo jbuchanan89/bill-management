@@ -31,8 +31,10 @@
   }
 
   .how h4 {
-        font-family: 'Architects Daughter', cursive;
-        font-size: 40px;
+    color: #E37222;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+    text-transform: uppercase;
   }
 
   .steps {
@@ -55,17 +57,33 @@
     color: #07889B;
   }
 
+   .signup-form h1 {
+    color: #E37222;
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  /*******Login Form***************/
+
+  .login-form {
+    display: none;
+  }
+
+  .login-form h1{
+    margin: 50px;
+  }
+
   /********Signup form*********/
 
 
-  .signup-form {
-    background-color: white;
+  .signup-form, .login-form {
+    background-color: rgba(255,255,255,0.85);
     text-align: center;
     height: 550px;
     margin: 0;
   }
 
-  .signup-form input {
+  .signup-form input, .login-form input {
     width: 250px;
     font-size: 16px;
     display: block;
@@ -75,15 +93,28 @@
     border-radius: 5px;
   }
 
-  .signup-form h2 {
+  .signup-form h2, .login-form h1 {
     padding-top: 0;
-    margin-top: 15px;
-  }
 
-  .signup-form label {
+    color: #07889B;
+    font-size: 30px;
+    font-weight: normal;
+  }
+  .signup-form h2 {
+      margin: 15px;
+  }
+  .signup-form label, .login-form label {
     font-weight: bold;
   }
 
-  .signup-form button {
+  .signup-form button, .login-form button {
     margin-bottom: 10px;
+  }
+
+  .signup-link, .login-link {
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: normal;
+    color: #07889B;
+    font-size: 18px;
   }

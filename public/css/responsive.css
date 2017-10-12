@@ -1,14 +1,23 @@
 @media screen and (max-width: 930px) {
 
 /******* Index.js Responsive******/
-   .signup-form, .how {
+
+   .signup-form, .login-form, .how {
       width: 91.66%;
       margin: 4.17%;
+      border: 1px solid #ddd;
+      font-size: 18px;
+      height: 400px;
+    }
+
+    .signup-form input {
+      width: 250px;
+      font-size: 16px;
     }
 
     .background-image {
-      height: 400px;
-      width: 100%;
+      height: 350px;
+      padding-top: 20px;
     }
 
   .how h4 {
@@ -30,9 +39,7 @@
     font-size: 35px;
 
   }
-  /*div .row .steps  {
-        font-color: #07889B;
-  }*/
+
   .steps .summary {
     font-size: 20px;
     font-weight: normal;
@@ -43,33 +50,23 @@
     padding-top: 20px;
   }
 
-  .signup-form, .how {
-    border: 1px solid #ddd;
-    font-size: 18px;
-  }
-
  .how {
    height: 400px;
  }
 
+ .logo-div {
+   width: 100%;
+ }
 
+.logo-div .logo {
+  margin-top: 100px;
+}
 /**************Everything Else**********/
-
-    .signup-form, .box, .main-nav, {
-      width: 91.66%;
-      margin-top: 50px;
-      height: 500px;
-    }
 
     form h2 {
       margin-bottom: 30px;
     }
 
-    /*.main-nav {
-      width: 91.66%;
-      padding: 20px;
-      height: 300px;
-    }`*/
     .welcome{
       font-size: 30px;
     }
@@ -79,7 +76,7 @@
       font-size: 20px;
     }
 
-    h1, .main-nav h2, h4, .remaining {
+    h1, h4, .remaining {
       font-size: 25px;
     }
 
@@ -116,17 +113,7 @@
       font-size: 14px;
     }
 
-    .signup-form input, .box input {
-      width: 250px;
-      font-size: 16px;
-    }
 
-    /*.main-nav button {
-      width: 200px;
-      font-size: 20px;
-      margin: 10px 40px;
-      display: inline-block;
-    }*/
 
     .form-info .checkbox {
       width: 60px;

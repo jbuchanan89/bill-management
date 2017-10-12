@@ -106,18 +106,16 @@
 
 
           <form method="post" action="/bill" id="myForm">
-              <p class = "form-info"><label>*Due Date</label> <input  class="info" type="date" name="dueDate"/>
-              <p  class ="form-info"><label>*Type</label><input class="info" type="text" name="type"/></p>
-              <p  class ="form-info"><label>*Company</label> <input class="info" type="text" name="company"/></p>
-              <p  class ="form-info"><label>*Amount Due </label><input class="info" type="text" name="minimum"/></p>
+              <p class = "form-info"><label>*Due Date</label> <input  class="info date-input" type="date" name="dueDate" placeholder="mm/dd/yyyy"/>
+              <p  class ="form-info"><label>*Type</label><input class="info type-input" type="text" name="type" placeholder="ex. Utilities"/></p>
+              <p  class ="form-info"><label>*Company</label> <input class="info company-input" type="text" name="company" placeholder="ex. Electric Company"/></p>
+              <p  class ="form-info"><label>*Amount Due </label><input class="info amount-due-input" type="text" name="minimum" placeholder="ex. 100.00"/></p>
               <p  class ="form-info"><label>Recurring</label> <input class="info checkbox" type = "checkbox" name="recurring" class= "recurring-check" value=true /></p>
 
               <h2 class="submit-form"><span><i class="fa fa-plus" style="font-size:24px"></i></span>   Add New Bill</h2>
           </form>
         </div>
   </div>
-
-
 
 
 <script

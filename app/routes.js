@@ -18,8 +18,9 @@ module.exports = function(app, passport) {
 
 
 // **********POST REQUEST TO CREATE A BILL***********
-	app.post('/bill', isLoggedIn, function(req,res){
+	app.post('/bill', isLoggedIn, function(req,res,err){
 		// console.log(req.body);
+
 		Bill.create({
 			dueDate    : moment(req.body.dueDate).format("L"),
       company     : req.body.company,
@@ -45,7 +46,11 @@ module.exports = function(app, passport) {
 			res.redirect('/profile');
 		});
 		// res.send(200);
+		// if(err){
+		// 	return done(null, false, req.flash('addBillMessage', 'Please Complete All Fields'));
+		// }
 	});
+
 
 
 
@@ -102,7 +107,7 @@ module.exports = function(app, passport) {
 
 // **********TAKES TO LOGIN SCREEN***********
 	app.get('/login', function(req, res) {
-		res.render('login.ejs', { message: req.flash('login message') });
+		res.render('index.ejs', { message: req.flash('login message') });
 	});
 
 

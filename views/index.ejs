@@ -14,66 +14,104 @@
 </head>
 <body>
   <div class = "row">
-    <div class="background-image col-8">
-      <p class ="logo">
-          Paid It <i class="fa fa-pagelines"></i>
-      </p>
-      <h2></h2>
-    </div>
-    <div class="signup-form col-4">
+    <div class="background-image col-12">
+
+      <div class = "row">
+        <div class ="logo-div col-9">
+          <p class ="logo">
+              Paid It <i class="fa fa-pagelines"></i>
+          </p>
+        </div>
+        <div class="signup-form col-3">
+
+              <h2><span class="fa fa-sign-in"></span> Signup</h2>
+
+              <form action="/signup" method="post" id="signupForm">
+
+                <label>First Name</label>
+                <input type="text"  name="first" class="first-name-input">
+
+                <label>Last Name</label>
+                <input type="text" name="last" class="last-name-input">
+
+                <label>Email</label>
+                <input type="text" name="email" class="email-input">
+
+                <label>Password</label>
+                <input type="password" name="password">
+
+                <button type="submit">Signup</button>
+          </form>
+
+          <p class = "login-now"> Already have an Account?  <span class=login-link> Login Now</span></p>
+        </div>
 
 
-          <h2><span class="fa fa-sign-in"></span> Signup</h2>
+        <div class = 'login-form'>
+          <h1><i class="fa fa-lock"></i>  USER LOGIN</h1>
+          <form action="/login", method="post">
+            <div class= "username">
+              <label>Email</label>
+              <input type="text" name="email" class="email-input">
+            </div>
 
-        <form action="/signup" method="post">
-
-            <label>First Name</label>
-            <input type="text"  name="first">
-
-            <label>Last Name</label>
-            <input type="text" name="last">
-
-            <label>Email</label>
-            <input type="text" name="email">
-
+            <div class ="password">
             <label>Password</label>
-            <input type="password" name="password">
+            <input type="password" required name="password">
+          </div>
 
-            <button type="submit">Signup</button>
-      </form>
+            <button class= "login-btn"type="submit">Login</button>
+          </form>
+            <p class ="signup-link">Sign Up Now</p>
 
-      <p> Already have an Account?     <a href="/login">Login Now</a>
-  </div>
+        </div>
+      </div>
+      </p>
+    </div>
+
 </div>
 
-<hr>
 
+
+
+
+
+<div class = "row">
 <div class ="how">
   <h4>How It Works</h4>
   <div class="row">
     <div class="steps col-3">
-      <p class="step-number">1</p>
+      <p class="step-number"> <i class="fa fa-plus" aria-hidden="true"></i></p>
       <p class="summary">
-        Add Bill <i class="fa fa-plus" aria-hidden="true"></i>
+        Add Bill
       </p>
     </div>
 
     <div class="steps col-3">
-      <p class="step-number">2</p>
+      <p class="step-number">  <i class="fa fa-eye" aria-hidden="true"></i></p>
       <p class="summary">
-        See Upcoming Bills  <i class="fa fa-eye" aria-hidden="true"></i>
+        See Upcoming Bills
       </p>
     </div>
 
     <div class="steps col-3">
-      <p class="step-number">3</p>
+      <p class="step-number"><i class="fa fa-check-square-o" aria-hidden="true"></i></p>
       <p class="summary">
-        Mark Bills Paid  <i class="fa fa-check-square-o" aria-hidden="true"></i>
+        Mark Bills Paid
       </p>
     </div>
 
   </div>
 </div>
+</div>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>
 
