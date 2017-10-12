@@ -1,6 +1,6 @@
 
   .background-image {
-    height: 500px;
+    height: 550px;
     background-image:
     linear-gradient(
     rgba(0, 0, 0, 0.7),
@@ -68,6 +68,15 @@
     margin: 50px;
   }
 
+.demo-info {
+  display: none;
+}
+
+.demo strong {
+  background-color: #fff;
+  padding: 5px;
+  cursor: pointer;
+}
   /********Signup form*********/
 
   .signup-form h1 {
@@ -80,7 +89,7 @@
     background-color: rgba(255,255,255,0.85);
     text-align: center;
     margin: 0;
-    height: 500px;
+    height: 550px;
   }
 
   .signup-form input, .login-form input {
@@ -95,13 +104,12 @@
 
   .signup-form h2, .login-form h1 {
     padding-top: 0;
-
     color: #07889B;
     font-size: 30px;
     font-weight: normal;
   }
   .signup-form h2 {
-      margin: 15px;
+      margin: 30px;
   }
   .signup-form label, .login-form label {
     font-weight: bold;

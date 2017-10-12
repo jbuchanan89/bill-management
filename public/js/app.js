@@ -113,19 +113,26 @@ $(document).ready(function(){
     }
   }
 
-  $(".login-now").click(function(){
+  $(".login-link").click(function(){
     $(".signup-form").css("display", "none");
     $(".signup-form").removeClass("col-3");
       $(".login-form").addClass("col-3");
     $(".login-form").css("display", "block");
 
   });
-$(".signup-link").click(function(){
-    $(".login-form").css("display", "none");
-    $(".login-form").removeClass("col-3");
-    $(".signup-form").css("display", "block");
-    $(".signup-form").addClass("col-3");
+  $(".signup-link").click(function(){
+      $(".login-form").css("display", "none");
+      $(".login-form").removeClass("col-3");
+      $(".signup-form").css("display", "block");
+      $(".signup-form").addClass("col-3");
+  });
 
-});
+  $(".demo").click(function(){
+    $(".signup-form").css("display", "none");
+    $(".signup-form").removeClass("col-3");
+    $(".login-form").addClass("col-3");
+    $(".login-form").css("display", "block");
+    $(".demo-info").css("display", "block");
+  });
 
 });
