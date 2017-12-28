@@ -125,6 +125,7 @@ $(document).ready(function(){
       $(".login-form").removeClass("col-3");
       $(".signup-form").css("display", "block");
       $(".signup-form").addClass("col-3");
+      $(".demo-info").css("display", "none");
   });
 
   $(".demo").click(function(){

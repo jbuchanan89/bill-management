@@ -64,7 +64,6 @@ module.exports = function(app, passport) {
 
 
 
-
 // **********UPDATES AMOUNT PAID FROM THE AMOUNT PAID FIELD***********
 	app.put('/amount-paid/:id/:amount', isLoggedIn, function(req, res) {
 		Bill.findOneAndUpdate({_id:req.params.id},{$set:{amountPaid:req.params.amount}},{new:true},function(err,bill){
