@@ -15,84 +15,77 @@
   <header>
         <a href="/logout"><button class+"logout">Logout</button></a>
         <a href="/all-bills"> <button class= "view-all-bills">View All Bills </button></a>
-
   </header>
 
     <div class="row">
       <p class = "welcome">Welcome <%=name%>!</p>
+    </div>
 
-
-  </div>
-<div class= 'account-info'>
-
-  <h4><%=start%> - <%=end%></h4>
-
-
-</div>
+    <div class= 'account-info'>
+      <h4><%=start%> - <%=end%></h4>
+      <p>Bill Amount: <%=bills.length %></p>
+    </div>
 
 
 <!-- ******DISPLAYS BILL INFO********************** -->
-  <main class ='row'>
+    <main class ='row'>
 
-      <table class="table col-11">
-        <thead>
-          <th>Due Date</th>
-          <th>Type</th>
-          <!-- <th>Recurring</th> -->
-          <th>Company</th>
-          <th>Due</th>
-          <th>Paid</th>
-          <th>Paid</th>
-          <th>Del</th>
+        <table class="table col-11">
+          <thead>
+            <th>Due Date</th>
+            <th>Type</th>
+            <!-- <th>Recurring</th> -->
+            <th>Company</th>
+            <th>Due</th>
+            <th>Paid</th>
+            <th>Paid</th>
+            <th>Del</th>
+          </thead>
+          
+          <tbody>
+          <% for(var i=0; i<bills.length; i++) {%>
+            <tr>
+              <td><%=bills[i].dueDate%></td>
+              <td><%=bills[i].type%></td>
+              <td><%=bills[i].company%></td>
 
-        </thead>
-        <tbody>
-        <% for(var i=0; i<bills.length; i++) {%>
-          <tr>
-            <td><%=bills[i].dueDate%></td>
-            <td><%=bills[i].type%></td>
-
-            <td><%=bills[i].company%></td>
-            <td class="minimum minimum-<%=bills[i].paid%>">$<%=bills[i].minimum%></td>
-            <td> <input class="amount" type="text" data-bill="<%=bills[i]._id%>" value="<%=bills[i].amountPaid%>"/></td>
-            <% if(bills[i].paid == true){ %>
+              <td class="minimum minimum-<%=bills[i].paid%>">$<%=bills[i].minimum%></td>
+              <td> <input class="amount" type="text" data-bill="<%=bills[i]._id%>" value="<%=bills[i].amountPaid%>"/></td>
+              <% if(bills[i].paid == true){ %>
               <td><input type="checkbox" name="paid" checked class="paid-check" data-bill="<%=bills[i]._id%>"/></td>
-            <% } else { %>
+              <% } else { %>
+
               <td><input type="checkbox" name="paid" class="paid-check" data-bill="<%=bills[i]._id%>"/></td>
-            <% } %>
-            <td><a href="/bill-delete/<%=bills[i]._id%>"><i class="fa fa-trash-o" style="font-size:24px"></i></td></a>
-          </tr>
-        <% } %>
+              <% } %>
+              <td><a href="/bill-delete/<%=bills[i]._id%>"><i class="fa fa-trash-o" style="font-size:24px"></i></td></a>
+            </tr>
+          <% } %>
 
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td align="right" >Total Due:</td>
+              <td class="due">$<%=total%></td>
+              <td></td>
+              <td></td>
+            </tr>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td align="right" >Total Due:</td>
-          <td class="due">$<%=total%></td>
-          <td></td>
-          <td></td>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td align="right">Total Paid:</td>
+              <td class="totalPaid"><strong>$<%=totalPaid%></strong></td>
+              <td></td>
+              <td></td>
+            </tr>
 
-        </tr>
+          </tbody>
+        </table>
 
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td align="right">Total Paid:</td>
-          <td class="totalPaid"><strong>$<%=totalPaid%></strong></td>
-          <td></td>
-          <td><form-info
-
-        </tr>
-
-
-        </tbody>
-      </table>
-
-      <p class ='remaining'>Remaining Due by <%= end%> :</p> <p class ='remaining diff red'> $<%=difference%></p>
-  </main>
+        <p class ='remaining'>Remaining Due by <%= end%> :</p> <p class ='remaining diff red'> $<%=difference%></p>
+    </main>
 
 
 

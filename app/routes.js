@@ -22,14 +22,14 @@ module.exports = function(app, passport) {
 		// console.log(req.body);
 
 		Bill.create({
-			dueDate    : moment(req.body.dueDate).format("L"),
-      company     : req.body.company,
-      minimum  : req.body.minimum,
+			dueDate    : moment(req.body.dueDate).valueOf(),
+      		company     : req.body.company,
+      		minimum  : req.body.minimum,
 			type: req.body.type,
 			amountPaid: 0,
-      paid : false,
+     		paid : false,
 			recurring: req.body.recurring,
-      _creator: req.user._id
+      		_creator: req.user._id
 		},function(err,bill){
 			if(bill.recurring == true){
 				Bill.create({
@@ -61,6 +61,8 @@ module.exports = function(app, passport) {
 			res.send(200);
 		});
 	});
+
+
 
 
 
@@ -135,24 +137,33 @@ module.exports = function(app, passport) {
 
 
 
-// **********LOADS USERS PROFILE***********
+// **********LOADS USERS PROFILE**********
+	app.get('/date',function(req,res){
+	res.send("{date:"+moment("01/14/2018").valueOf()+"}");
+	});
+
 	app.get('/profile', isLoggedIn, function(req, res) {
 		var date = moment().format("LL");
 		var total = 0;
 		var totalPaid = 0;
-		var start = moment().subtract(15, 'days').format("L");
-		var end = moment().add(15, 'days').format('L');
+		var startStamp = moment().subtract(15, 'days').valueOf();
+		var start = moment().subtract(15, 'days').format("LL");
+		var endStamp = moment().add(15, 'days').valueOf();
+		var end = moment().add(15, 'days').format('LL');
 
+		console.log(typeof end);
+		console.log("start",start,"end",end);
+	
 		Bill.find({
 			_creator:req.user._id,
 			dueDate: {
-				$gte: start,
-				$lte: end}
+				$gte: startStamp,
+				$lte: endStamp}
 			},function(err,bills){
 			bills.forEach(function(bill,index){
 				total += bill.minimum;
 				totalPaid += bill.amountPaid;
-			});
+				console.log(bill.dueDate);			});
 			res.render('profile.ejs', {
 				user: req.user,
 				name: req.user.local.first + ' '+req.user.local.last,
@@ -162,7 +173,7 @@ module.exports = function(app, passport) {
 				totalPaid: totalPaid,
 				difference: total + -totalPaid,
 				start: start,
-				end: end,
+				end: end
 			});
 		});
 	});
@@ -170,7 +181,7 @@ module.exports = function(app, passport) {
 // ******** LOADS ALL BILLS**************
 	app.get('/all-bills', isLoggedIn, function(req, res) {
 		var date = moment().format("LL");
-
+		console.log(date);
 		Bill.find({
 			_creator:req.user._id,
 		},null,{
