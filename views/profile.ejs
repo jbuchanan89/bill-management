@@ -23,7 +23,6 @@
 
     <div class= 'account-info'>
       <h4><%=start%> - <%=end%></h4>
-      <p>Bill Amount: <%=bills.length %></p>
     </div>
 
 
@@ -45,7 +44,7 @@
           <tbody>
           <% for(var i=0; i<bills.length; i++) {%>
             <tr>
-              <td><%=bills[i].dueDate%></td>
+              <td><%= moment(bills[i].dueDate,"x").format("L") %></td>
               <td><%=bills[i].type%></td>
               <td><%=bills[i].company%></td>
 
@@ -96,7 +95,6 @@
   <div class= "new row">
 
     <div class= "add-bill-form col-11">
-
 
           <form method="post" action="/bill" id="myForm">
               <p class = "form-info"><label>*Due Date</label> <input  class="info date-input" type="date" name="dueDate" placeholder="mm/dd/yyyy"/>

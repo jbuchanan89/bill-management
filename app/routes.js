@@ -19,10 +19,10 @@ module.exports = function(app, passport) {
 
 // **********POST REQUEST TO CREATE A BILL***********
 	app.post('/bill', isLoggedIn, function(req,res,err){
-		// console.log(req.body);
-
+		//console.log(req.body);
+		//console.log(req.body.dueDate,moment(req.body.dueDate).valueOf(),moment(req.body.dueDate, "YYYY-MM-DD").format("L"));
 		Bill.create({
-			dueDate    : moment(req.body.dueDate).valueOf(),
+			dueDate    : moment(req.body.dueDate,"YYYY-MM-DD").valueOf(),
       		company     : req.body.company,
       		minimum  : req.body.minimum,
 			type: req.body.type,
@@ -33,7 +33,7 @@ module.exports = function(app, passport) {
 		},function(err,bill){
 			if(bill.recurring == true){
 				Bill.create({
-					dueDate    : moment(req.body.dueDate).add(1, 'M').format("L"),
+					dueDate    : moment(req.body.dueDate, "YYYY-MM-DD").add(1, 'M').valueOf(),
 					company     : req.body.company,
 					minimum  : req.body.minimum,
 					type: req.body.type,
@@ -150,6 +150,7 @@ module.exports = function(app, passport) {
 		var start = moment().subtract(15, 'days').format("LL");
 		var endStamp = moment().add(15, 'days').valueOf();
 		var end = moment().add(15, 'days').format('LL');
+		var today = moment().valueOf();
 
 		console.log(typeof end);
 		console.log("start",start,"end",end);
@@ -162,8 +163,8 @@ module.exports = function(app, passport) {
 			},function(err,bills){
 			bills.forEach(function(bill,index){
 				total += bill.minimum;
-				totalPaid += bill.amountPaid;
-				console.log(bill.dueDate);			});
+				totalPaid += bill.amountPaid;		
+			});
 			res.render('profile.ejs', {
 				user: req.user,
 				name: req.user.local.first + ' '+req.user.local.last,
@@ -173,7 +174,9 @@ module.exports = function(app, passport) {
 				totalPaid: totalPaid,
 				difference: total + -totalPaid,
 				start: start,
-				end: end
+				end: end,
+				moment: moment,
+				today: today
 			});
 		});
 	});
@@ -207,7 +210,7 @@ module.exports = function(app, passport) {
 	function checkForRepeatBills(){
 		Bill.find({
 			recurring: true,
-			dueDate: { $gt: moment().add(1,'M').format("L"), $lt: moment().add(2,'M').format("L") }
+			dueDate: { $gt: moment().add(1,'M').valueOf(), $lt: moment().add(2,'M').valueOf() }
 		}, function(err,bills){
 			if(!err){
 				bills.forEach(function(bill, index){
@@ -221,7 +224,7 @@ module.exports = function(app, passport) {
 							if(data.length==0){
 								// console.log('The bill',bill.company,'due on',bill.dueDate,'will be duplicated for the next month');
 								Bill.create({
-									dueDate    : moment(bill.dueDate,"L").add(1, 'M').format("L"),
+									dueDate    : moment(bill.dueDate,"L").add(1, 'M').valueOf(),
 									company     : bill.company,
 									minimum  : bill.minimum,
 									type: bill.type,
