@@ -196,7 +196,8 @@ module.exports = function(app, passport) {
 				user: req.user,
 				name: req.user.local.first + ' '+req.user.local.last,
 				bills: bills,
-				date: date
+				date: date,
+				moment: moment
 			});
 		});
 	});

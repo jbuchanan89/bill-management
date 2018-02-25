@@ -40,7 +40,7 @@
           <% for(var i=0; i<bills.length; i++) {%>
 
             <tr>
-              <td><%=bills[i].dueDate%></td>
+              <td><%= moment(bills[i].dueDate,"x").format("L") %></td>
               <td><%=bills[i].type%></td>
 
               <% if(bills[i].recurring == true) { %>
